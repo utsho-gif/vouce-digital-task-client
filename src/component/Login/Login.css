@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Macondo&family=Merriweather&family=Oswald&family=PT+Serif:ital@1&family=Poppins:wght@500&display=swap');
+
+h2{
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+.size{
+    font-size: smaller;
+}
+input[type=checkbox] {
+    accent-color: #03203C;
+  }
+.small-view{
+    width: 75%;
+}
+@media screen and (max-width: 720px) {
+    .small-view{
+        width: 100%;
+    }
+    .size{
+        font-size: x-small;
+    }
+}

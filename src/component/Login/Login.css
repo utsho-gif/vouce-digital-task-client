@@ -20,4 +20,9 @@ input[type=checkbox] {
     .size{
         font-size: x-small;
     }
+    .manage{
+        display: flex;
+        flex-direction: column;
+    }
+    
 }

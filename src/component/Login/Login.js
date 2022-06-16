@@ -4,13 +4,12 @@ import "./Login.css";
 
 const Login = () => {
   const [massage, setMassage] = useState('');
-  const [error, setError] = useState('');
   const handleSubmit = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
     const data = { email, password };
-    const url = `http://localhost:5000/login`;
+    const url = `https://desolate-spire-88913.herokuapp.com/login`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -22,7 +21,7 @@ const Login = () => {
       .then((data) => {
         console.log(data);
         if(data.token){
-          setMassage('Successfully received token');
+          setMassage(`Successfully received token ${data.token}`);
         }
         if(data.error){
           setMassage('Password Missing');
@@ -56,7 +55,7 @@ const Login = () => {
           </h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group
-              className="mb-3  mx-auto small-view"
+              className="mb-3 mx-auto small-view"
               controlId="formBasicEmail"
             >
               <Form.Control
@@ -86,7 +85,7 @@ const Login = () => {
               Login
             </Button>
           </Form>
-          <div className="d-flex justify-content-around mt-2">
+          <div className="d-flex justify-content-around mt-2 manage">
             <div className="size fw-bold">
               <input
                 // onClick={() => setAgree(!agree)}
